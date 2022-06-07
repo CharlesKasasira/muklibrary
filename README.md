@@ -1,8 +1,11 @@
 # LIbrary System By Group J
 
 ### Technologies to be used:
+
 Django - a python framework
+
 Javascript
+
 Html5 and CSS3
 
 A web - based application for a library system using django framework that is able to show different books with their titles, publications, dates and author where students can request and search for books which have been posted by the library.
