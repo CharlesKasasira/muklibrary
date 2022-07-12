@@ -1,0 +1,110 @@
+{% extends 'authenticate/base.html' %} {% block content %}
+
+<main class="books">
+  <h1>Books you may like</h1>
+
+  <div>
+    <div>
+      <h2 class="book-category">COMPUTER SCIENCE</h2>
+    </div>
+
+    <div class="book-row">
+      {% for book in book_list %} {% if book.category == "computer" %}
+      <article>
+        <a href="{% url 'book-detail' book.id %}">
+          <figure class="book-cover">
+            <img
+              src="{{ book.cover.url }}"
+              alt="c-programmming"
+              width="150px"
+              height="150px"
+            />
+          </figure>
+          <h3>{{book.title}}</h3>
+          <p class="book-author">{{book.author}}</p>
+          <span class="{{ book.status }} book-status book-status-bottom"
+            >{{book.status}}</span
+          >
+        </a>
+      </article>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+  <div>
+    <div>
+      <h2 class="book-category">Self Help</h2>
+    </div>
+
+    <div class="book-row">
+      {% for book in book_list %} {% if book.category == "motivation" %}
+      <article>
+        <a href="{% url 'book-detail' book.id %}">
+          <figure class="book-cover">
+            <img
+              src="{{ book.cover.url }}"
+              alt="c-programmming"
+              width="150px"
+              height="150px"
+            />
+          </figure>
+          <h3>{{book.title}}</h3>
+          <p class="book-author">{{book.author}}</p>
+          <span class="{{ book.status }} book-status">{{book.status}}</span>
+        </a>
+      </article>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+  <div>
+    <div>
+      <h2 class="book-category">COMPUTER SCIENCE</h2>
+    </div>
+
+    <div class="book-row">
+      {% for book in book_list %} {% if book.category == "computer" %}
+      <article>
+        <a href="{% url 'book-detail' book.id %}">
+          <figure class="book-cover">
+            <img
+              src="{{ book.cover.url }}"
+              alt="c-programmming"
+              width="150px"
+              height="150px"
+            />
+          </figure>
+          <h3>{{book.title}}</h3>
+          <p class="book-author">{{book.author}}</p>
+          <span class="{{ book.status }} book-status">{{book.status}}</span>
+        </a>
+      </article>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+  <div>
+    <div>
+      <h2 class="book-category">Self Help</h2>
+    </div>
+
+    <div class="book-row">
+      {% for book in book_list %} {% if book.category == "motivation" %}
+      <article>
+        <a href="{% url 'book-detail' book.id %}">
+          <figure class="book-cover">
+            <img
+              src="{{ book.cover.url }}"
+              alt="c-programmming"
+              width="150px"
+              height="150px"
+            />
+          </figure>
+          <h3>{{book.title}}</h3>
+          <p class="book-author">{{book.author}}</p>
+          <span class="{{ book.status }} book-status">{{book.status}}</span>
+        </a>
+      </article>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</main>
+
+{% endblock %}

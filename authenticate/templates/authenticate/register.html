@@ -1,0 +1,72 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+<div
+  class="flex"
+>
+<form method="POST" action="{% url 'register' %}" class="login-form">
+  {% csrf_token %}
+  <h1 class="">Register</h1>
+
+  {% if form.errors %}
+    <div class="alert alert-warning alert-dismissable" role="alert">
+          <button class="close" data-dismiss="alert">
+                  <small><sup>x</sup></small>
+              </button>
+          <p>Your Form Has Errors...</p>
+          {% for field in form %}
+            {% if field.errors  %}
+              {{ field.errors }}
+            {% endif %}
+          {% endfor %}
+        </div>
+  {% endif %}
+
+    <div class="input-fields">
+      <label for="">Username</label>
+      {{form.username}}
+    </div>
+    <div class="input-fields">
+      <label for="">Email</label>
+      {{form.email}}
+    </div>
+    <div class="input-fields">
+      <label for="">First Name</label>
+      {{form.first_name}}
+    </div>
+    <div class="input-fields">
+      <label for="">Enter First Name</label>
+      {{form.last_name}}
+    </div>
+    <div class="input-fields">
+      <label for="">Password</label>
+      {{form.password1}}
+    </div>
+    <div class="input-fields">
+      <label for="">Confirm Password</label>
+      {{form.password2}}
+    </div>
+    
+    
+
+    
+
+  <input type="submit" value="Register" class="cta">
+
+  <div class="mt-5">
+    Already have an account?
+    <a href="{% url 'login' %}">Login</a>
+  </div>
+</form>
+
+</div>
+
+
+
+<div class="col-md-6 offset-md-3">
+	
+</div>
+<br/><br/>
+{% endblock %}
+

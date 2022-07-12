@@ -1,0 +1,130 @@
+{% extends 'authenticate/base.html' %} {% block content %}
+
+<main class="books">
+  <h1>Books you may like</h1>
+  <div>
+    {% for book in book_list %}
+
+    <article>
+      <h2 class="{{ entry.created_at|date:'l' }}">
+        {{ book.created_at|date:'Y-m-d H:i' }}
+      </h2>
+      <h3>
+        <a href="{% url 'book-detail' entry.id %}"> {{ book.title }} </a>
+      </h3>
+    </article>
+
+    {% endfor %}
+    <h2 class="book-category">Computer Science</h2>
+    <div class="book-row">
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+    </div>
+  </div>
+  <div>
+    <h2 class="book-category">Self Help</h2>
+    <div class="book-row">
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+    </div>
+  </div>
+  <div>
+    <h2 class="book-category">Self Help</h2>
+    <div class="book-row">
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+      <article>
+        <figure class="book-cover">
+          <img src="" alt="c-programmming" width="150px" height="150px" />
+        </figure>
+        <h3>C programming</h3>
+        <p class="book-author">Ricthie</p>
+        <span class="book-status">Available</span>
+      </article>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
