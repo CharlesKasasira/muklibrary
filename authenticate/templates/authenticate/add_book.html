@@ -1,0 +1,49 @@
+{% extends "authenticate/base.html" %} 
+{% block content %} 
+
+<div
+  class="books"
+>
+<form method="POST" class="">
+  {% csrf_token %}
+  <h1 class="">Add book</h1>
+
+    <div class="input-fields">
+      <label for="">Title</label>
+      <!-- {{form.username}} -->
+    </div>
+    <div class="input-fields">
+      <label for="">Author</label>
+      <!-- {{form.email}} -->
+    </div>
+    <div class="input-fields">
+      <label for="">Description</label>
+      <!-- {{form.first_name}} -->
+    </div>
+    <div class="input-fields">
+      <label for="">Category</label>
+      <!-- {{form.last_name}} -->
+    </div>
+    <div class="input-fields">
+      <label for="">Cover</label>
+      <!-- {{form.password1}} -->
+    </div>
+    
+    
+
+    
+
+  <input type="submit" value="Add Book" class="cta">
+
+</form>
+
+</div>
+
+
+
+<div class="col-md-6 offset-md-3">
+	
+</div>
+<br/><br/>
+
+{% endblock %}

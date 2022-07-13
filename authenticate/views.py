@@ -26,6 +26,10 @@ class BookDetailView(DetailView):
 def home(request):
 	return render(request, 'authenticate/home.html', {})
 
+@login_required(login_url='login')
+def add_book(request):
+	return render(request, 'authenticate/add_book.html', {})
+
 def login_user(request):
 	if request.method == 'POST':
 		username = request.POST['username']
