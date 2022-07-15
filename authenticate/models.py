@@ -12,7 +12,7 @@ def filepath(request, filename):
 # Create your models here.
 class Book(models.Model):
   title = models.CharField(max_length=200, unique=False, default="")
-  author = models.TextField(null=True)
+  author = models.CharField(null=True, max_length=200)
   status = models.TextField(null=True, default="available")
   description = models.TextField(null=True)
   cover = models.ImageField(upload_to=filepath, null=True, blank=True)

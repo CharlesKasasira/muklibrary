@@ -32,6 +32,7 @@ def add_book(request):
 	form = BookForm()
 	if request.method == 'POST':
 		form = BookForm(request.POST)
+		print(form)
 		if form.is_valid:
 			form.save()
 			messages.success(request, ('Book was added successfully!'))
@@ -40,6 +41,12 @@ def add_book(request):
 
 	context = {'form': form}
 	return render(request, 'authenticate/add_book.html', context)
+
+@login_required(login_url='login')
+def update_status(request):
+	form = BookForm()
+	context = {'form': form}
+	return render(request, 'authenticate/book_detail.html', context)
 
 def login_user(request):
 	if request.method == 'POST':
