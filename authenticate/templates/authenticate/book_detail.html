@@ -1,0 +1,28 @@
+{% extends "authenticate/base.html" %} {% block content %}
+<div class="book-detail">
+  <div class="book-cover-detail">
+    <img
+      src="{{ book.cover.url }}"
+      alt="c-programmming"
+      width="300px"
+      height="300px"
+    />
+  </div>
+  <div class="book-description">
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.description }}</p>
+    <p>By <b>{{ book.author }}</b></p>
+    <span class="{{ book.status }} book-status">{{book.status}}</span>
+    <br />
+    {% if book.status == "available" %}
+    <button class="cta borrow-btn" onclick="borrowBook()">Borrow Book</button>
+    {% endif %} {% if book.status != "available" %}
+    <p>This book will be available in 2 days</p>
+    {% endif %}
+  </div>
+</div>
+
+<div>
+  <h3>More Related Books</h3>
+</div>
+{% endblock %}
