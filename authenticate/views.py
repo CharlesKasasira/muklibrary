@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib import messages 
 from .forms import SignUpForm, EditProfileForm
 from django.contrib.auth.decorators import login_required
+from .forms import BookForm
 
 from django.views.generic import ( 
   ListView, 
@@ -28,7 +29,17 @@ def home(request):
 
 @login_required(login_url='login')
 def add_book(request):
-	return render(request, 'authenticate/add_book.html', {})
+	form = BookForm()
+	if request.method == 'POST':
+		form = BookForm(request.POST)
+		if form.is_valid:
+			form.save()
+			messages.success(request, ('Book was added successfully!'))
+			return redirect('book-list')
+
+
+	context = {'form': form}
+	return render(request, 'authenticate/add_book.html', context)
 
 def login_user(request):
 	if request.method == 'POST':
