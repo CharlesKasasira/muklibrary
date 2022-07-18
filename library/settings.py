@@ -27,9 +27,9 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 SECRET_KEY = 'django-insecure-#^2b7gbnl%7_xv0k3cxhp!&k@@ktjuwju$ze7_1$cpa6(k6jjm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['https://muklibrary.herokuapp.com', 'localhost:8000', '*']
+ALLOWED_HOSTS = ['muklibrary.herokuapp.com', 'localhost:8000', '*']
 
 
 # Application definition
