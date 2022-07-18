@@ -176,6 +176,7 @@ pyobjc-framework-WebKit==8.4.1
 pyperclip==1.8.2
 PyRect==0.2.0
 PyScreeze==0.1.28
+python==3.10.2
 python-dateutil==2.8.2
 pytweening==1.0.4
 pyzmq==22.3.0
