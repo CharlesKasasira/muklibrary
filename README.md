@@ -1,4 +1,4 @@
-# LIbrary System By Group J
+# Library System By Group J
 
 ### Technologies to be used:
 
@@ -15,3 +15,4 @@ Books requested must have an automatic return date whenever a book is borrowed a
 
 List members
 1. Kasasira Charles Derrick
+2. Nakuwanda Bridget Hellen
