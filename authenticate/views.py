@@ -1,3 +1,4 @@
+from turtle import title
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib import messages 
@@ -37,16 +38,36 @@ def add_book(request):
 			form.save()
 			messages.success(request, ('Book was added successfully!'))
 			return redirect('book-list')
-
-
+		
 	context = {'form': form}
 	return render(request, 'authenticate/add_book.html', context)
 
+
 @login_required(login_url='login')
-def update_status(request):
-	form = BookForm()
-	context = {'form': form}
-	return render(request, 'authenticate/book_detail.html', context)
+def search_book(request):
+	if request.method == "POST":
+		searched = request.POST["searched"]
+		books = Book.objects.filter(title__contains=searched)
+		return render(request, 'authenticate/search_book.html', {"searched": searched, "books": books})
+	else:
+		return render(request, 'authenticate/search_book.html', {})
+
+
+@login_required(login_url='login')
+def update_status(request, pk):
+	
+	# context = {'form': form}
+	book = Book.objects.get(id=pk)
+	book.status = "reserved"
+	book.save()
+	# form = BookForm(instance=book)
+	if request.method == "POST":
+		form = BookForm(request.POST, instance=book)
+		# if form.is_valid:
+		# 	form.save()
+		return render(request, 'authenticate/update_book.html', {"book": book, "form": form})
+	
+	return render(request, 'authenticate/update_book.html', {})
 
 def login_user(request):
 	if request.method == 'POST':

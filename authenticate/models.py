@@ -13,7 +13,7 @@ def filepath(request, filename):
 class Book(models.Model):
   title = models.CharField(max_length=200, unique=False, default="")
   author = models.CharField(null=True, max_length=200)
-  status = models.TextField(null=True, default="available")
+  status = models.CharField(null=True, default="available", max_length=200)
   description = models.TextField(null=True)
   cover = models.ImageField(upload_to=filepath, null=True, blank=True)
   category = models.CharField(max_length=200, null=False, default="computer")

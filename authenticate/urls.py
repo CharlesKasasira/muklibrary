@@ -7,6 +7,8 @@ urlpatterns = [
   path("logout", views.logout_user, name="logout"),
   path("register", views.register_user, name="register"),
   path("add-book", views.add_book, name="add_book"),
+  path("search-book", views.search_book, name="search-book"),
+  path("update-book/<int:pk>/", views.update_status, name="update-book"),
   # path("", views.home, name="home"),
   path("", login_required(login_url='login')(views.BookListView.as_view()), name="book-list"),
   path(

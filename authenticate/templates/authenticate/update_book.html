@@ -1,0 +1,25 @@
+{% extends "authenticate/base.html" %} {% block content %}
+
+<main class="books">
+  <!-- <form action="" method="POST"> -->
+  <h1>This Book has been Reversed for you for 2 hours from now.</h1>
+  <div class="book-detail">
+    <div class="book-cover-detail">
+      <img
+        src="{{ book.cover.url }}"
+        alt="{{ book.title }}"
+        width="300px"
+        height="300px"
+      />
+    </div>
+    <div class="book-description">
+      <h3>{{ book.title }}</h3>
+      <p>{{ book.description }}</p>
+      <p>By <b>{{ book.author }}</b></p>
+      <br />
+    </div>
+  </div>
+  <!-- </form> -->
+</main>
+
+{% endblock %}

@@ -3,7 +3,7 @@
   <div class="book-cover-detail">
     <img
       src="{{ book.cover.url }}"
-      alt="c-programmming"
+      alt="{{ book.title }}"
       width="300px"
       height="300px"
     />
@@ -15,14 +15,18 @@
     <span class="{{ book.status }} book-status">{{book.status}}</span>
     <br />
     {% if book.status == "available" %}
-    <button class="cta borrow-btn" onclick="borrowBook()">Borrow Book</button>
+    <form method="POST" action="{% url 'update-book' book.id %}">
+      {% csrf_token %}
+      <button class="cta borrow-btn" onclick="borrowBook()">Borrow Book</button>
+    </form>
+
     {% endif %} {% if book.status != "available" %}
     <p>This book will be available in 2 days</p>
     {% endif %}
   </div>
 </div>
 
-<div>
+<!-- <div>
   <h3>More Related Books</h3>
-</div>
+</div> -->
 {% endblock %}

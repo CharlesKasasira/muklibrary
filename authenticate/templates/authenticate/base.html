@@ -14,7 +14,12 @@
     <nav>
       <ul>
         <li><a href="{% url 'book-list' %}">Home</a></li>
-        <div>
+        <form class="searchbook" method="POST" action="{% url 'search-book' %}">
+          {% csrf_token %}
+          <input type="text" placeholder="Search" name="searched" />
+          <button type="submit">Search</button>
+        </form>
+        <div class="profile">
           <li><a href="{% url 'logout' %}">Hello, {{ user.username }}</a></li>
           <li><a href="{% url 'logout' %}">Logout</a></li>
         </div>

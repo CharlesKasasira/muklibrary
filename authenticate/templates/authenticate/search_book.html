@@ -1,0 +1,32 @@
+{% extends "authenticate/base.html" %} {% block content %}
+
+<main class="books">
+  {% if searched %}
+  <h1>You are searched for {{ searched }}</h1>
+
+  <div class="book-row">
+  {% for book in books %} 
+  <article>
+    <a href="{% url 'book-detail' book.id %}">
+      <figure class="book-cover">
+        <img
+          src="{{ book.cover.url }}"
+          alt="{{book.title}}"
+          width="150px"
+          height="150px"
+        />
+      </figure>
+      <h3>{{book.title}}</h3>
+      <p class="book-author">{{book.author}}</p>
+      <span class="{{ book.status }} book-status book-status-bottom"
+        >{{book.status}}</span
+      >
+    </a>
+  </article>
+</div>
+  {% endfor %} {% else %}
+  <h1>You forgot to search something</h1>
+  {% endif %}
+</main>
+
+{% endblock %}

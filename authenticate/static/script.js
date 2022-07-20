@@ -4,6 +4,7 @@ setTimeout(() => {
   message.remove();
 }, 1500);
 
-const borrowBook = () => {
-  console.log("Book borrowed successfully");
+const borrowBook = (id) => {
+  // console.log("Book borrowed successfully");
+  console.log(id)
 };
