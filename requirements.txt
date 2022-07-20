@@ -9,7 +9,6 @@ distlib==0.3.4
 dj-database-url==0.5.0
 Django==4.0.5
 django-on-heroku==1.1.2
-djangorestframework==3.13.1
 entrypoints==0.4
 executing==0.8.3
 filelock==3.7.1
@@ -179,7 +178,6 @@ PyRect==0.2.0
 PyScreeze==0.1.28
 python-dateutil==2.8.2
 pytweening==1.0.4
-pytz==2022.1
 pyzmq==22.3.0
 rubicon-objc==0.4.2
 six==1.16.0
