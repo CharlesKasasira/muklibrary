@@ -13,10 +13,53 @@
       <article>
         <a href="{% url 'book-detail' book.id %}">
           <figure class="book-cover">
-            <img
-              src="{{ book.cover.url }}"
-              alt="{{book.title}}"
-            />
+            <img src="{{ book.cover.url }}" alt="{{book.title}}" />
+          </figure>
+          <h3>{{book.title}}</h3>
+          <p class="book-author">{{book.author}}</p>
+          <span class="{{ book.status }} book-status book-status-bottom"
+            >{{book.status}}</span
+          >
+        </a>
+      </article>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <h2 class="book-category">Self Help</h2>
+    </div>
+
+    <div class="book-row">
+      {% for book in book_list %} {% if book.category == "motivation" %}
+      <article>
+        <a href="{% url 'book-detail' book.id %}">
+          <figure class="book-cover">
+            <img src="{{ book.cover.url }}" alt="{{book.title}}" />
+          </figure>
+          <h3>{{book.title}}</h3>
+          <p class="book-author">{{book.author}}</p>
+          <span class="{{ book.status }} book-status book-status-bottom"
+            >{{book.status}}</span
+          >
+        </a>
+      </article>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <h2 class="book-category">Biography</h2>
+    </div>
+
+    <div class="book-row">
+      {% for book in book_list %} {% if book.category == "biography" %}
+      <article>
+        <a href="{% url 'book-detail' book.id %}">
+          <figure class="book-cover">
+            <img src="{{ book.cover.url }}" alt="{{book.title}}" />
           </figure>
           <h3>{{book.title}}</h3>
           <p class="book-author">{{book.author}}</p>
@@ -30,68 +73,21 @@
   </div>
   <div>
     <div>
-      <h2 class="book-category">Self Help</h2>
+      <h2 class="book-category">History</h2>
     </div>
 
     <div class="book-row">
-      {% for book in book_list %} {% if book.category == "motivation" %}
+      {% for book in book_list %} {% if book.category == "history" %}
       <article>
         <a href="{% url 'book-detail' book.id %}">
           <figure class="book-cover">
-            <img
-              src="{{ book.cover.url }}"
-              alt="{{book.title}}"
-            />
+            <img src="{{ book.cover.url }}" alt="{{book.title}}" />
           </figure>
           <h3>{{book.title}}</h3>
           <p class="book-author">{{book.author}}</p>
-          <span class="{{ book.status }} book-status">{{book.status}}</span>
-        </a>
-      </article>
-      {% endif %} {% endfor %}
-    </div>
-  </div>
-  <div>
-    <div>
-      <h2 class="book-category">COMPUTER SCIENCE</h2>
-    </div>
-
-    <div class="book-row">
-      {% for book in book_list %} {% if book.category == "computer" %}
-      <article>
-        <a href="{% url 'book-detail' book.id %}">
-          <figure class="book-cover">
-            <img
-              src="{{ book.cover.url }}"
-              alt="{{book.title}}"
-            />
-          </figure>
-          <h3>{{book.title}}</h3>
-          <p class="book-author">{{book.author}}</p>
-          <span class="{{ book.status }} book-status">{{book.status}}</span>
-        </a>
-      </article>
-      {% endif %} {% endfor %}
-    </div>
-  </div>
-  <div>
-    <div>
-      <h2 class="book-category">Self Help</h2>
-    </div>
-
-    <div class="book-row">
-      {% for book in book_list %} {% if book.category == "motivation" %}
-      <article>
-        <a href="{% url 'book-detail' book.id %}">
-          <figure class="book-cover">
-            <img
-              src="{{ book.cover.url }}"
-              alt="{{book.title}}"
-            />
-          </figure>
-          <h3>{{book.title}}</h3>
-          <p class="book-author">{{book.author}}</p>
-          <span class="{{ book.status }} book-status">{{book.status}}</span>
+          <span class="{{ book.status }} book-status book-status-bottom"
+            >{{book.status}}</span
+          >
         </a>
       </article>
       {% endif %} {% endfor %}
