@@ -1,3 +1,4 @@
 authenticate/migrations
 authenticate/__pycache__
 borrow/migrations
+db.sqlite3
