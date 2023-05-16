@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['muklibrary.herokuapp.com', '127.0.0.1:8000', '*']
 
+CSRF_TRUSTED_ORIGINS = ['https://web-production-b6900.up.railway.app/']
+
 
 # Application definition
 
